@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+
+{% block style %}
+    <style>
+        .container{
+            margin-top: 30px;
+            text-align: center;
+        }
+        h4 {
+            text-align: left;
+        }
+        label, textarea{
+            margin-top: 5px !important;
+        }
+        .form-control-plaintext, .form-control{
+            display: inline-block !important;
+            width: 49% !important;
+        }
+        .width100{
+            width: 100% !important;
+        }
+        .width25{
+            text-align: center;
+            width: 25% !important;
+        }
+        .width23{
+            width: 23% !important;
+        }
+        .width15{
+            width: 15% !important;
+        }
+        .width84{
+            width: 84% !important;
+        }
+    </style>
+{% endblock %}
+
+{% block title %} Application form {% endblock %}
+
+{% block nav1 %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+		<h1>APPLICATION FORM</h1>
+		<hr>
+		<form align="left" action="/booking" method="POST" enctype="multipart/form-data">
+            <h4><i>1. PERSONAL DETAILS</i></h4>
+			<div class="form-group">
+				<label class="form-control-plaintext width25" for="id">ID Number</label>
+				<input type="text" class="form-control width23" id="id" name="id" required>
+                <label class="form-control-plaintext width25" for="ben">Birth Entry Number</label>
+				<input type="number" class="form-control width23" id="ben" name="ben" required>
+				<label class="form-control-plaintext" for="surname">Surname</label>
+				<input type="text" class="form-control" id="surname" name="surname" required>
+                <label class="form-control-plaintext" for="other_names">Other names</label>
+				<input type="text" class="form-control" id="other_names" name="other_names" required>
+                <label class="form-control-plaintext" for="maiden_name">Maiden name</label>
+				<input type="text" class="form-control" id="maiden_name" name="maiden_name">
+                <label class="form-control-plaintext width84" for="name_changed">Has name been changed? If yes, state original name how changed and date</label>
+                <select class="form-control width15" id="name_changed" name="name_changed" required>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+                <input type="text" class="form-control width100" name="details">
+                <label class="form-control-plaintext width25" for="sex">Sex</label>
+				<select class="form-control width23" id="sex" name="sex" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <label class="form-control-plaintext width25" for="marital_status">Marital Status</label>
+				<select class="form-control width23" id="marital_status" name="marital_status" required>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                </select>
+                <label class="form-control-plaintext" for="dob">Date of birth</label>
+				<input type="date" class="form-control" id="dob" name="dob" required>
+                <label class="form-control-plaintext" for="pob">Place of birth</label>
+				<input type="text" class="form-control" id="pob" name="pob" required>
+                <label class="form-control-plaintext" for="cob">Country of birth</label>
+				<input type="text" class="form-control" id="cob" name="cob" required>
+                <label class="form-control-plaintext" for="height">Height</label>
+				<input type="text" class="form-control" id="height" name="height" required>
+                <label class="form-control-plaintext" for="coe">Colour of eyes</label>
+				<input type="text" class="form-control" id="coe" name="coe" required>
+                <label class="form-control-plaintext" for="coh">Colour of hair</label>
+				<input type="text" class="form-control" id="coh" name="coh" required>
+                <label class="form-control-plaintext" for="pecs">Visible marks or peculiarities</label>
+				<input type="text" class="form-control" id="pecs" name="pecs" required>
+                <label class="form-control-plaintext" for="prof">Profession</label>
+				<input type="text" class="form-control" id="prof" name="prof" required>
+                <label class="form-control-plaintext" for="res">Residential address</label>
+				<input type="text" class="form-control" id="res" name="res" required>
+                <label class="form-control-plaintext" for="copr">Country of permanent residence</label>
+				<input type="text" class="form-control" id="copr" name="copr" required>
+                <label class="form-control-plaintext" for="tel">Telephone</label>
+				<input type="tel" class="form-control" id="tel" name="tel" required>
+			</div>
+            <hr>
+            <h4><i>2. MARRIED WOMAN, DIVORCED OR WIDOWED</i></h4>
+			<div class="form-group">
+				<label class="form-control-plaintext" for="dom">Date of marriage</label>
+				<input type="date" class="form-control" id="dom" name="dom">
+				<label class="form-control-plaintext" for="hfn">Husband's full name</label>
+				<input type="text" class="form-control" id="hfn" name="hfn">
+                <label class="form-control-plaintext" for="pcm">Place & country of marriage</label>
+				<input type="text" class="form-control" id="pcm" name="pcm">
+				<label class="form-control-plaintext" for="hpcb">Husband's place & country of birth</label>
+				<input type="text" class="form-control" id="hpcb" name="hpcb">
+                <label class="form-control-plaintext" for="hc">Husbands citizenship</label>
+				<input type="text" class="form-control" id="hc" name="hc">
+                <label class="form-control-plaintext" for="mdon">Marriage or divorce order number</label>
+				<input type="number" class="form-control" id="mdon" name="mdon">
+                <label class="form-control-plaintext width84" for="mmto">State if married more than once. If yes particulars of former marriage(s) must be given on Section 7</label>
+				<select class="form-control width15" id="mmto" name="mmto" required>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+			</div>
+            <hr>
+            <h4><i>3. NEXT OF KIN</i></h4>
+			<div class="form-group">
+				<label class="form-control-plaintext" for="kfn">Full name</label>
+				<input type="text" class="form-control" id="kfn" name="kfn" required>
+				<label class="form-control-plaintext" for="krta">Relation to applicant</label>
+				<input type="text" class="form-control" id="krta" name="krta" required>
+                <label class="form-control-plaintext" for="kra">Residential address</label>
+				<input type="text" class="form-control" id="kra" name="kra" required>
+				<label class="form-control-plaintext" for="ktel">Telephone</label>
+				<input type="tel" class="form-control" id="ktel" name="ktel" required>
+			</div>
+            <hr>
+            <h4><i>4. DECLARATION BY APPLICANT</i></h4>
+			<div class="form-group">
+				<label class="form-control-plaintext" for="citizen_by">I am a citizen of Zimbabwe by:</label>
+				<select class="form-control" id="citizen_by" name="citizen_by" required>
+                    <option value="Birth">Birth</option>
+                    <option value="Descend">Descend</option>
+                    <option value="Registration">Registration</option>
+                </select>
+				<label class="form-control-plaintext width84" for="idb">Were you ever issued with a ZIMBABWEAN PASSPORT/TRAVEL DOCUMENT?</label>
+				<select class="form-control width15" id="idb" name="idb" required>
+                    <option value="No">No</option>
+                    <option value="Yes, valid">Yes, valid</option>
+                    <option value="Yes, expired">Yes, expired</option>
+                    <option value="Yes, full">Yes, full</option>
+                    <option value="Yes, lost">Yes, lost</option>
+                </select>
+                <label class="form-control-plaintext" for="ipn">If yes, state the Passport number</label>
+				<input type="number" class="form-control" id="ipn" name="ipn">
+                <label class="form-control-plaintext width84" for="hfp">Are you a holder of a foreign passport?</label>
+				<select class="form-control width15" id="hfp" name="hfp" required>
+                    <option value="N/A">N/A</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+                <label class="form-control-plaintext" for="fpn">If yes, state the Passport number</label>
+				<input type="number" class="form-control" id="fpn" name="fpn">
+				<label class="form-control-plaintext width84" for="rfb">Did you renounce your foreign birth right in favour of Zimbabwean citizenship?</label>
+				<select class="form-control width15" id="rfb" name="rfb" required>
+                    <option value="N/A">N/A</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+                <label class="form-control-plaintext width84" for="sfp">Did you surrender your foreign passport?</label>
+				<select class="form-control width15" id="sfp" name="sfp" required>
+                    <option value="N/A">N/A</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+                <label class="form-control-plaintext" for="sfpn">If yes, state the Passport number</label>
+				<input type="number" class="form-control" id="sfpn" name="sfpn">
+                <label class="form-control-plaintext" for="ddate">Date</label>
+				<input type="date" class="form-control" id="ddate" name="ddate">
+			</div>
+            <hr>
+            <h4><i>5. DECLARATION BY FATHER OR OTHER LEGAL GUARDIAN(for children under 18 years)</i></h4>
+			<div class="form-group">
+				<label class="form-control-plaintext width23" for="gfn">I (fullname)</label>
+				<input type="text" class="form-control width25" id="gfn" name="gfn" required>
+				<label class="form-control-plaintext width23" for="gid">I.D. No.</label>
+				<input type="text" class="form-control width25" id="gid" name="gid" required>
+                <label class="form-control-plaintext width100">Declare that the information given in this application is correct to the best of my knowledge and belief. I hereby give my consent to the issue of a passport to the applicant.</label>
+				<label class="form-control-plaintext" for="grtc">Relationship to child</label>
+				<input type="text" class="form-control" id="grtc" name="grtc" required>
+                <label class="form-control-plaintext" for="gdate">Date</label>
+				<input type="date" class="form-control" id="gdate" name="gdate" required>
+			</div>
+            <hr>
+            <h4><i>6. PARTICULARS OF LOST/STOLEN PASSPORT OR NOT AVAILABLE FOR PRESENT USE</i></h4>
+			<div class="form-group">
+				<label class="form-control-plaintext" for="lspn">Passport No.</label>
+				<input type="text" class="form-control" id="lspn" name="lspn">
+				<label class="form-control-plaintext" for="lsit">Issued at</label>
+				<input type="text" class="form-control" id="lsit" name="lsit">
+                <label class="form-control-plaintext" for="lsid">Issue Date</label>
+				<input type="date" class="form-control" id="lsid" name="lsid">
+				<label class="form-control-plaintext" for="lsfn">Bearer's full name</label>
+				<input type="text" class="form-control" id="lsfn" name="lsfn">
+                <label class="form-control-plaintext" for="lsreason">State how lost/stolen or other reasons</label>
+                <textarea class="form-control" id="lsreason" name="lsreason"></textarea>
+			</div>
+            <hr>
+            <h4><i>7. PREVIOUS MARRIAGE DETAILS/FORMER NAMES</i></h4>
+			<div class="form-group">
+				<textarea type="text" class="form-control width100" id="prev_details" name="prev_details"></textarea>
+                <label class="form-control-plaintext" for="prev_details"></label>
+			</div>
+            <hr>
+            <h4><i>8. SUPPORTING DOCUMENTS</i></h4>
+			<div class="form-group">
+				<label class="form-control-plaintext" for="bcert">Birth Certificate</label>
+				<input type="file" class="form-control" id="bcert" name="bcert" required>
+                <label class="form-control-plaintext" for="nat_id">National ID</label>
+				<input type="file" class="form-control" id="nat_id" name="nat_id" required>
+                <label class="form-control-plaintext" for="fnid">Father/Legal guardian national ID</label>
+				<input type="file" class="form-control" name="fnid" required>
+			</div>
+            <hr>
+            <center>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+            </center>
+		</form>
+	</div>
+{% endblock %}
