@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 class App(Flask):
     def __init__(self, import_name):
         super().__init__(import_name)
-        self.debug = False
+        self.debug = True
         self.config.update({
             "SECRET_KEY": 'HGR85NG75BF84NG85BG95NF9',
             "SQLALCHEMY_DATABASE_URI": 'sqlite:///citizens.db',
