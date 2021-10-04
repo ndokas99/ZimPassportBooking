@@ -1,5 +1,6 @@
 from flask import render_template, flash, request, session
 from werkzeug.security import generate_password_hash, check_password_hash
+from sqlalchemy.exc import OperationalError
 from models import *
 from os import path
 from datetime import datetime, timedelta
@@ -208,7 +209,10 @@ def confirm():
 
 def create_database():
     if not path.exists("citizens.db"):
-        db.create_all(app=app)
+        try:
+            db.create_all(app=app)
+        except OperationalError:
+            pass
 
 
 create_database()
